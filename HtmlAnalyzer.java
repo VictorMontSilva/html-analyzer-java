@@ -7,40 +7,40 @@ public class HtmlAnalyzer {
   public static void main(String[] args) {
     if (args.length == 0) return;
     
-        String urlString = args [0];
         String deepestText = null;
-        try (Scanner sc = new Scanner(new URL(args[0]).openStream())) {
-        Stack<String> stack = new Stack<>();
-        
         int maxDepth = -1;
+        Stack<String> stack = new Stack<>();
 
+        try (Scanner sc = new Scanner(new URL(args[0]).openStream())) {
             while (sc.hasNextLine()){
             String line = sc.nextLine().trim();
             if (line.isEmpty()) continue;
 
             if (line.startsWith("</")) {
-                String tag = line.substring(2, line.length() -1);
+                String tag = line.substring(2, line.length() -1).trim();
                 if (stack.isEmpty() || !stack.pop().equals(tag)) {
                     System.out.println("malformed HTML");
                     return;
                 }
              } else if (line.startsWith("<")) {
-                String tag = line.substring(1, line.length() -1);
-             }  else {
+                String tag = line.substring(1, line.length() -1).trim();
+                stack.push(tag);
+             } else {
                 if (stack.size() > maxDepth) {
                     maxDepth = stack.size();
                     deepestText = line;
-
                 }
             }
          }
 
-         if (!stack.isEmpty()) System.out.println("malformed HTML");
-         else if (deepestText != null) System.out.println(deepestText);
+         if (!stack.isEmpty()) {
+            System.out.println("malformed HTML");
+         } else if (deepestText != null) {
+            System.out.println(deepestText);
+         }
 
-        } catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("URL connection error");
-
         }       
 
     }
