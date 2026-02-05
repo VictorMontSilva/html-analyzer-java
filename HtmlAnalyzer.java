@@ -19,7 +19,7 @@ public class HtmlAnalyzer {
             if (line.startsWith("</")) {
                 String tag = line.substring(2, line.length() -1).trim();
                 if (stack.isEmpty() || !stack.pop().equals(tag)) {
-                    System.out.println("malformed HTML");
+                    System.out.println("Malformed HTML");
                     return;
                 }
              } else if (line.startsWith("<")) {
@@ -34,7 +34,7 @@ public class HtmlAnalyzer {
          }
 
          if (!stack.isEmpty()) {
-            System.out.println("malformed HTML");
+            System.out.println("Malformed HTML");
          } else if (deepestText != null) {
             System.out.println(deepestText);
          }
