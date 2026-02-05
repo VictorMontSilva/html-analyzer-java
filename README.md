@@ -28,10 +28,13 @@ It is a fully designed Java code attached to this readme file, to analyze pages 
 
 ### Technical explanation
 
--Stack - Piles
+#### Stack/piles
+
 The HTMl Analyzer works by using a Stack system that piles tags and values, searching for the deepest value possible (maxDepth) while also saving the value with the deepest level (deepestText). The stack works by methods such as: stack.push(tag) and stack.pop(), also using the .equals(tag) method to analyze the similarity between two identical tags, verifying if their string values match. 
 
--Structure
+
+#### Structure
+
 The object line was added to represent thhe line analyzed alogn the tags (Analysis via line per line, same as a high-level code interpretation)
 The object scanner was added to represent the scanner of the URL itself
 The statements are a conditional analysis over the HTML analyzed via the URL (if, else, if else, try, catch, continue, return)
@@ -43,7 +46,7 @@ The deepestText variable represents the string value thatw as analyzed to be the
 The Exception class works with the e variable and the catch statement, in case any part of the code goes wrong not according to the run, as a soft of "emergency measure"
 The System.out.println() method prints the result according to the analysis
 
--Cleaning 
+#### Cleaning and optimizing
 The funcionality added to clean empty spaces was the .trim() method, focused on irrelevant values such as empty spaces between tags, strings and such, valuing only the content actually written in the HTML file analyzed.
 
 
