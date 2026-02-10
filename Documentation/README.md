@@ -48,5 +48,3 @@ The System.out.println() method prints the result according to the analysis
 
 #### Cleaning and optimizing
 The funcionality added to clean empty spaces was the .trim() method, focused on irrelevant values such as empty spaces between tags, strings and such, valuing only the content actually written in the HTML file analyzed.
-
-

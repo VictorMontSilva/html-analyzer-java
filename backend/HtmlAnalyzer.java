@@ -9,7 +9,7 @@ import java.io.*;
 import java.net.InetSocketAddress;
 
 
-public class HtmlQualityAnalyzer {
+public class HtmlAnalyzer {
 
     public static void main(String[] args) throws Exception {
         // 1. Inicia o banco de dados
