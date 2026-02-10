@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador HTML</title>
+</head>
+
+<body>
+    <h1>Bem vindo ao analisador de página HTML!</h1>
+
+    <h2>O funcionamento é bem simples:</h2>
+    <p>Basta selecionar as opções do menu, escolhendo entre analisar e sair. ao selecionar a opção de analisar, digite a url e o programa irá realizar a leitura. è possível reiniciá-lo. Boa sorte!</p>
+    
+    <h3>Campo para analisar sua URL:</h3>
+    <form id="meuFormulario">
+  <input type="text" id="campoTexto" placeholder="Digite algo...">
+  <button type="button" onclick="interagir()">Enviar</button>
+</form>
+
+<script>
+  function interagir() {
+    let texto = document.getElementById('campoTexto').value;
+    alert("Você digitou: " + texto);
+  }
+</script>
+
+</body> 
+</html>
